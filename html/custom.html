@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/estilo.css">
+    <title>Document</title>
+</head>
+
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="catalog.html">Catalog</a>
+                </li>
+                <li>
+                    <a href="custom.html">Custom</a>
+                </li>
+                <li>
+                    <a href="faq.html">FAQ</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+<body>
+    <div class="containercustom">
+        <div id="formcustom">
+            <form action="action_page.php">
+        
+            <label for="fname">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name..">
+        
+            <label for="lmail">Mail</label>
+            <input type="text" id="lmail" name="mail" placeholder="Your email..">
+        
+            <label for="custom">Resin/3d Print</label>
+            <select id="custom" name="custom">
+                <option selected="selected"></option>
+                <option value="resin">Resin</option>
+                <option value="3dprint">3d Print</option>
+            </select>
+        
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" placeholder="Write your custom request.." style="height:200px"></textarea>
+
+            <label for="adjunt">File</label>
+            <input type="file" name="file" accept=".pdf,.jpg,.png" multiple />
+        
+            <input type="submit" value="Submit">
+        
+            </form>
+        </div>
+    </div>
+</body>
+
+<footer>    
+    <div class="footer">
+        <div id="footerdiv1">
+            <Span>Social Media</Span>
+           <ul>
+                <li>
+                    <a href="">Facebook</a>
+                </li>
+                <li>
+                    <a href="">Instagram</a>
+                </li>
+                <li>
+                    <a href="">Tik Tok</a>
+                </li>
+           </ul>
+        </div>
+        <div id="footerdiv2">
+            <span>Useful Links</span>
+            <ul>
+                <li>
+                    <a href="">Search</a>
+                </li>
+                <li>
+                    <a href="">Contact</a>
+                </li>
+                <li>
+                    <a href="">Terms of Service</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+    
+
+</html>
