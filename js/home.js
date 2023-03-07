@@ -1,7 +1,10 @@
+  productos = []
+
   const pintarProductos = (data) => {
     const contenedor = document.getElementById("producto-contenedor");
 
     data.forEach(producto => {
+      productos.push(producto)
       const div = document.createElement('div');
       div.classList.add('card');
       div.innerHTML += `<div class="card-image">
