@@ -1,6 +1,7 @@
 let carrito = []
 
 const productoContenedor = document.getElementById('producto-contenedor')
+const botonVaciar = document.getElementById('btn-vaciar-carrito')
 
 productoContenedor.addEventListener('click', (e) => {
     if (e.target.classList.contains('agregar')) {
@@ -41,7 +42,7 @@ const pintarProductoCarrito = (producto) => {
     contenedor.appendChild(div)
 };
 
-const actualizarTotalesCarrito = (carrito) => {
+const actualizarTotalesCarrito = () => {
     const totalCantidad = carrito.reduce((acc, item) => acc + item.cantidad, 0)
     const totalCompra = carrito.reduce((acc, item) => acc + (item.precio * item.cantidad), 0)
 
@@ -57,11 +58,11 @@ const pintarTotalesCarrito = (totalCantidad, totalCompra) => {
     precioTotal.innerText = totalCompra
 };
 
-const pintarCarrito = (carrito) => {
+// const pintarCarrito = (carrito) => {
+const pintarCarrito = () => {
     const contenedor = document.getElementById('carrito-contenedor')
 
     contenedor.innerHTML = ''
-
     carrito.forEach(producto => {
         const div = document.createElement('div')
         div.classList.add('productoEnCarrito')
@@ -72,7 +73,9 @@ const pintarCarrito = (carrito) => {
             <button class="btn waves-effect waves-ligth boton-eliminar" value="${producto.id}">X</button>
         `
         contenedor.appendChild(div)
+        localStorage.setItem('carrito', JSON.stringify(carrito))
     });
+    
 };
 
 const eliminarProductosCarrito = (productoId) => {
@@ -81,6 +84,28 @@ const eliminarProductosCarrito = (productoId) => {
     pintarCarrito(carrito)
     actualizarTotalesCarrito(carrito)
 };
+
+// const eliminarCarrito = () => {
+//     carrito = 0
+//     pintarCarrito(carrito)
+//     actualizarTotalesCarrito(carrito)
+//     localStorage.clear()
+
+// };
+
+botonVaciar.addEventListener('click', () => {
+    if (carrito.length>0) {
+    carrito.length = 0
+    pintarCarrito()
+    actualizarTotalesCarrito()
+    swal("Vaciar carrito", "Los productos han sido eliminados con éxito!", "success");
+    }
+    else
+    {
+        swal("Vaciar carrito", "El carrito se encuentra vacio", "warning");
+    }
+});
+
 
 const guardarCarritoStorage = (carrito) => {
     localStorage.setItem('carrito', JSON.stringify(carrito))
@@ -100,4 +125,4 @@ const cargarCarrito = () => {
     }
 };
 
-cargarCarrito()
+// cargarCarrito()
